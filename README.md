@@ -4,7 +4,7 @@ A C++ implementation of an Autonomous Mobile Robot (AMR) path planning system us
 
 ## Features
 
-- **A* Path Planning**: Efficient pathfinding algorithm with support for 8-directional movement
+- **A-star Path Planning**: Efficient pathfinding algorithm with support for 8-directional movement
 - **Path Smoothing**: Catmull-Rom spline interpolation for smooth robot trajectories
 - **Motor Control**: Differential drive robot command generation with velocity and angular control
 - **Visualization**: HTML-based path visualization using Chart.js
@@ -13,7 +13,7 @@ A C++ implementation of an Autonomous Mobile Robot (AMR) path planning system us
 ## Project Structure
 
 ```
-amr-path-planning/
+AMR-Path-Planning/
 ├── src/
 │   ├── main.cpp              # Main application entry point
 │   ├── path_planning.cpp     # A* algorithm and path smoothing implementation
