@@ -1,0 +1,166 @@
+# GitHub Repository Setup Guide
+
+Here's how to organize and upload your AMR Path Planning project to GitHub:
+
+## Step 1: Create Repository Structure
+
+Create the following directory structure on your local machine:
+
+```
+AMR-Path-Planning/
+├── src/
+│   ├── main.cpp
+│   ├── path_planning.cpp
+│   ├── path_planning.h
+│   ├── motor_control.cpp
+│   └── motor_control.h
+├── docs/
+│   └── algorithm_details.md
+├── examples/
+│   └── basic_usage.cpp
+├── .gitignore
+├── CMakeLists.txt
+├── Makefile
+├── LICENSE
+└── README.md
+```
+
+## Step 2: Move Your Files
+
+1. Create a new folder called `AMR-Path-Planning`
+2. Create a `src` subfolder
+3. Move your existing files into the `src` folder:
+   - `main.cpp`
+   - `path_planning.cpp`
+   - `path_planning.h`
+   - `motor_control.cpp`
+   - `motor_control.h`
+
+## Step 3: Add the Generated Files
+
+Save each of the artifacts I created as separate files in your project:
+
+- `.gitignore` (in root directory)
+- `CMakeLists.txt` (in root directory)
+- `Makefile` (in root directory)
+- `LICENSE` (in root directory)
+- `README.md` (in root directory)
+
+## Step 4: Initialize Git Repository
+
+Open terminal/command prompt in your project directory and run:
+
+```bash
+# Initialize git repository
+git init
+
+# Add all files to staging
+git add .
+
+# Make initial commit
+git commit -m "Initial commit: AMR Path Planning System
+
+- A* pathfinding algorithm implementation
+- Catmull-Rom spline path smoothing
+- Motor control command generation
+- HTML visualization output
+- Complete build system with CMake and Makefile"
+```
+
+## Step 5: Create GitHub Repository
+
+1. Go to [GitHub.com](https://github.com)
+2. Click "New repository" or the "+" icon
+3. Repository name: `AMR-Path-Planning`
+4. Description: "Autonomous Mobile Robot Path Planning System with A* algorithm and smooth trajectory generation"
+5. Choose Public or Private
+6. **Don't** initialize with README, .gitignore, or license (you already have these)
+7. Click "Create repository"
+
+## Step 6: Connect Local to GitHub
+
+GitHub will show you commands to run. Use the "push an existing repository" option:
+
+```bash
+# Add remote origin
+git remote add origin https://github.com/Puliya07/AMR-Path-Planning.git
+
+# Push to GitHub
+git branch -M main
+git push -u origin main
+```
+
+## Step 7: Verify Upload
+
+Check your GitHub repository to ensure all files are present:
+- Source code in `src/` folder
+- README.md displays properly
+- Build files (CMakeLists.txt, Makefile) are present
+- .gitignore is working (no build artifacts should be visible)
+
+## Step 8: Add Repository Topics/Tags
+
+On your GitHub repository page:
+1. Click the gear icon next to "About"
+2. Add topics: `robotics`, `pathfinding`, `cpp`, `astar`, `autonomous-mobile-robot`, `path-planning`, `trajectory-planning`
+3. Add website URL if you have one
+4. Save changes
+
+## Step 9: Enable GitHub Pages (Optional)
+
+If you want to showcase the HTML visualization:
+1. Go to repository Settings
+2. Scroll to "Pages" section
+3. Select source branch (usually `main`)
+4. Your visualization will be available at: `https://Puliya07.github.io/AMR-Path-Planning/`
+
+## Step 10: Create Releases
+
+For version management:
+1. Go to "Releases" tab in your repository
+2. Click "Create a new release"
+3. Tag version: `v1.0.0`
+4. Release title: "Initial Release"
+5. Describe features and usage
+6. Attach compiled binaries if desired
+7. Publish release
+
+## Additional Recommendations
+
+### Branch Protection
+Set up branch protection rules for `main`:
+1. Go to Settings → Branches
+2. Add rule for `main` branch
+3. Require pull request reviews
+4. Require status checks to pass
+
+### Issue Templates
+Create `.github/ISSUE_TEMPLATE/` folder with templates for:
+- Bug reports
+- Feature requests
+- Questions
+
+### GitHub Actions (CI/CD)
+Create `.github/workflows/ci.yml` for automated testing:
+
+```yaml
+name: CI
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: make
+    - name: Test
+      run: make test
+```
+
+### Contributing Guidelines
+Create `CONTRIBUTING.md` with:
+- Code style guidelines
+- Pull request process
+- Development setup instructions
+
+This setup will give you a professional, well-organized repository that other developers can easily understand, build, and contribute to!
